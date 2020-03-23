@@ -1,0 +1,17 @@
+{
+  "name": "simple-todo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Sharp-Team/simple-todo.git",
+  "author": "Sharp Team <Đức, Nam, Nhật>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
