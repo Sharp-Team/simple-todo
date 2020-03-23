@@ -1,0 +1,8 @@
+{
+  "Add Todo Tree Highlight": {
+    "scope": "javascript",
+    "prefix": "inittodo",
+    "body": ["// ${1}", "// ${2}", "// TODO - ${3}"],
+    "description": "Init Todo"
+  }
+}
