@@ -15,10 +15,6 @@
     "db:seed": "sequelize db:seed:all",
     "db:setup": "yarn db:migrate && yarn db:seed"
   },
-  "engines": {
-    "node": "12.16.1",
-    "npm": "6.13.4"
-  },
   "dependencies": {
     "@babel/core": "^7.9.0",
     "@babel/polyfill": "^7.8.7",

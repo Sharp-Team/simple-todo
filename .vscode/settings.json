@@ -6,7 +6,6 @@
   "editor.mouseWheelZoom": true,
   "editor.formatOnSave": true,
   "editor.formatOnPaste": false,
-  "editor.multiCursorModifier": "ctrlCmd",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
