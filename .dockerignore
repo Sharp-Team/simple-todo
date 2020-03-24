@@ -1,0 +1,10 @@
+node_modules
+.git
+.DS_Store
+.gitignore
+README.md
+*.csv
+/tmp/*
+Dockerfile
+renovate.json
+dist/
