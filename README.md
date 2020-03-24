@@ -29,7 +29,7 @@ Sau khi vào bash container rồi thì run tiếp
 yarn db:migrate
 ```
 
-4. Ok, ngon rồi, bây giờ thì test API các thứ thôi! Nhớ thêm vào Header mục Authorization với token từ khi Login vào
+4. Ok, ngon rồi, bây giờ thì test API các thứ thôi! Nhớ thêm vào Header mục Authorization với token từ khi Login vào nhé 😎
 
 ## Thành viên tham gia
 
