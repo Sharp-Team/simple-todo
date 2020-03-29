@@ -1,6 +1,16 @@
-import { User } from '@models'
-import { EMAIL_EXISTS, INCORRECT_CREDENTIALS, EMAIL_NOT_FOUND, SOMETHING_WRONG, IS_OK } from '@constants/handleMessages'
-import { generalErrors } from '@helpers/errorHandlers'
+import {
+  User
+} from '@models'
+import {
+  EMAIL_EXISTS,
+  INCORRECT_CREDENTIALS,
+  EMAIL_NOT_FOUND,
+  SOMETHING_WRONG,
+  IS_OK
+} from '@constants/handleMessages'
+import {
+  generalErrors
+} from '@helpers/errorHandlers'
 
 /**
  * @param {import('express').Request} req
@@ -8,8 +18,16 @@ import { generalErrors } from '@helpers/errorHandlers'
  * @param {import('express').NextFunction} next
  */
 export const postLogin = (req, res, next) => {
-  const { email, password } = req.body
-  return User.findOne({ where: { email } })
+  const {
+    email,
+    password
+  } = req.body
+
+  return User.findOne({
+      where: {
+        email
+      }
+    })
     .then((user) => {
       if (user) {
         return user.verifyPassword(password, user.passwordHash).then((isMach) => {
@@ -29,13 +47,26 @@ export const postLogin = (req, res, next) => {
  * @param {import('express').NextFunction} next
  */
 export const postSignUp = (req, res, next) => {
-  const { email, password, fullName } = req.body
-  return User.findOne({ where: { email } })
+  const {
+    email,
+    password,
+    fullName
+  } = req.body
+  // console.log(email, password, fullName)
+  return User.findOne({
+      where: {
+        email
+      }
+    })
     .then((user) => {
       if (user) {
         return generalErrors(res, EMAIL_EXISTS.statusCode, EMAIL_EXISTS.msg)
       }
-      return User.create({ email, password, fullName }).then((user) => {
+      return User.create({
+        email,
+        password,
+        fullName
+      }).then((user) => {
         delete user.dataValues.password
         return res.status(IS_OK).json(user.generateToken())
       })
@@ -53,8 +84,12 @@ export const postSignUp = (req, res, next) => {
 export const logout = (req, res, next) => {
   return User.findByPk(req.user.id)
     .then((user) => {
-      user.update({ acceptTokenAfter: new Date() }).then(() => {
-        return res.status(IS_OK).json({ message: 'Log out successfully' })
+      user.update({
+        acceptTokenAfter: new Date()
+      }).then(() => {
+        return res.status(IS_OK).json({
+          message: 'Log out successfully'
+        })
       })
     })
     .catch((err) => next(err))

@@ -6,20 +6,32 @@ module.exports = {
    */
   up: (queryInterface, DataTypes) => {
     return queryInterface.createTable(
-      'todo', {
+      'todos', {
         id: {
           type: DataTypes.INTEGER,
           allowNull: false,
           primaryKey: true,
           autoIncrement: true,
         },
+        userId: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+          references: {
+            model: 'users',
+            key: 'id'
+          }
+        },
         name: {
           type: DataTypes.STRING,
+          allowNull: false,
+        },
+        status: {
+          type: DataTypes.STRING,
+          allowNull: true
         },
         isActive: {
           type: DataTypes.BOOLEAN,
-          allowNull: false,
-          defaultValue: true,
+          defaultValue: false,
         },
         createdAt: {
           type: DataTypes.DATE,
@@ -43,5 +55,5 @@ module.exports = {
   /**
    * @param {import('sequelize/types').QueryInterface} queryInterface
    */
-  down: (queryInterface, DataTypes) => queryInterface.dropTable('users'),
+  down: (queryInterface, DataTypes) => queryInterface.dropTable('todos'),
 }

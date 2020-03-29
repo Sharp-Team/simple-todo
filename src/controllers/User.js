@@ -1,6 +1,13 @@
-import { User } from '@models'
-import { IS_NOT_AUTHENTICATED, IS_OK } from '@constants/handleMessages'
-import { generalErrors } from '@helpers/errorHandlers'
+import {
+  User
+} from '@models'
+import {
+  IS_NOT_AUTHENTICATED,
+  IS_OK
+} from '@constants/handleMessages'
+import {
+  generalErrors
+} from '@helpers/errorHandlers'
 
 /**
  *
