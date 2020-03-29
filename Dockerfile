@@ -1,9 +1,10 @@
-FROM node:12.16.1
+FROM node:12.16.1-alpine
 
-COPY . /opt/app
+WORKDIR /opt/app/todo-backend
 
-WORKDIR /opt/app
+COPY . /opt/app/todo-backend
 
-RUN yarn
+# In Production Env
+RUN yarn install --production=true
 
 CMD yarn watch

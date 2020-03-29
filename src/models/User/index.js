@@ -1,4 +1,5 @@
 import User from './UserModel'
+import Todo from '../Todo/TodoModel'
 import { hashPassword } from '@libs/handlePassword'
 /**
  * Hooks
@@ -13,5 +14,7 @@ User.addHook('beforeUpdate', (user, option) => {
 /**
  * Associations
  */
+
+User.hasMany(Todo)
 
 export default User

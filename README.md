@@ -22,8 +22,8 @@ docker-compose up
 
 4. Exec vào container todo-backend để migrate database vào Postgres với 2 command line sau
 
-```bash
-docker-compose exec todo-backend bash
+```sh
+docker-compose exec todo-backend sh
 ```
 
 Sau khi vào bash container rồi thì run tiếp

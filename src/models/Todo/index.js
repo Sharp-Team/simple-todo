@@ -1,4 +1,5 @@
 import Todo from './TodoModel'
+import User from '../User'
 /**
  * Hooks
  */
@@ -6,5 +7,7 @@ import Todo from './TodoModel'
 /**
  * Associations
  */
+
+Todo.belongsTo(User)
 
 export default Todo

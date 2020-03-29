@@ -13,39 +13,23 @@ module.exports = {
           primaryKey: true,
           autoIncrement: true,
         },
+        name: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        status: {
+          type: DataTypes.BOOLEAN,
+          allowNull: true
+        },
         userId: {
           type: DataTypes.INTEGER,
           allowNull: false,
           references: {
             model: 'users',
             key: 'id'
-          }
-        },
-        name: {
-          type: DataTypes.STRING,
-          allowNull: false,
-        },
-        status: {
-          type: DataTypes.STRING,
-          allowNull: true
-        },
-        isActive: {
-          type: DataTypes.BOOLEAN,
-          defaultValue: false,
-        },
-        createdAt: {
-          type: DataTypes.DATE,
-          allowNull: false,
-          defaultValue: DataTypes.NOW,
-        },
-        updatedAt: {
-          type: DataTypes.DATE,
-          allowNull: false,
-          defaultValue: DataTypes.NOW,
-        },
-        deletedAt: {
-          type: DataTypes.DATE,
-          allowNull: true,
+          },
+          onUpdate: 'CASCADE',
+          onDelete: 'CASCADE'
         },
       }, {
         charset: 'utf8',
