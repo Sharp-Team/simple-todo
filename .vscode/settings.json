@@ -23,7 +23,7 @@
   "prettier.singleQuote": true,
   "prettier.printWidth": 100,
   "prettier.semi": false,
-  "prettier.trailingComma": "all",
+  "prettier.trailingComma": "none",
   // ========
   // Eslint
   // ========
@@ -35,71 +35,17 @@
     }
   ],
   "eslint.options": {
-    "extensions": [".js", ".ts"]
+    "extensions": [
+      ".js",
+      ".ts"
+    ]
   },
   "eslint.alwaysShowStatus": true,
-  "eslint.validate": ["javascript", "typescript"],
-  // ========
-  /// TODO TREE
-  // ========
-  "todo-tree.highlights.enabled": true,
-  "todo-tree.general.tags": ["FIXME", "TODO", "Duc", "Nam", "WIP", "DONE"],
-  "todo-tree.highlights.customHighlight": {
-    "TODO": {
-      "icon": "zap",
-      "type": "line",
-      "foreground": "#F5F5F5",
-      "background": "#29B6F6",
-      "iconColour": "#FFC107"
-    },
-    "FIXME": {
-      "icon": "alert",
-      "type": "line",
-      "foreground": "#F5F5F5",
-      "background": "#e53935",
-      "iconColour": "#e53935"
-    },
-    "DONE": {
-      "icon": "check",
-      "type": "line",
-      "foreground": "#F5F5F5",
-      "background": "#2E7D32",
-      "iconColour": "#2E7D32"
-    },
-    "WIP": {
-      "icon": "tools",
-      "type": "line",
-      "foreground": "#F5F5F5",
-      "background": "#9C27B0",
-      "iconColour": "#2196F3"
-    },
-    "Nam": {
-      "icon": "person",
-      "type": "line",
-      "foreground": "#F5F5F5",
-      "background": "#673AB7",
-      "iconColour": "#673AB7"
-    },
-    "Duc": {
-      "icon": "person",
-      "type": "line",
-      "foreground": "#F5F5F5",
-      "background": "#FF4081",
-      "iconColour": "#FF4081"
-    }
-  },
-
-  "todo-tree.filtering.excludeGlobs": [
-    "**/vendor/**",
-    "**/node_modules/**",
-    "**/dist/**",
-    "**/bower_components/**",
-    "**/build/**",
-    "**/.vscode/**",
-    "**/.github/**",
-    "**/_output/**",
-    "**/*.min.*",
-    "**/*.map"
+  "eslint.validate": [
+    "javascript",
+    "typescript"
   ],
-  "todo-tree.tree.scanMode": "workspace"
+  // for Windows collaborators
+  "files.eol": "\n",
+  "files.encoding": "utf8",
 }
